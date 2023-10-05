@@ -9,4 +9,5 @@ const indexRoute = require('./routes/index.route');
 
 app.use('/', indexRoute);
 
-app.listen(PORT, () => console.log(` Наш сервер пашет на ${PORT}  порту`));
+
+app.listen(PORT, () => console.log(`Наш сервер пашет на ${PORT}  порту`));
