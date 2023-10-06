@@ -23,7 +23,6 @@ function ThemesList(): JSX.Element {
           <div>{theme.title}</div>
           <div className='questionsDiv'>
             {theme.Questions.map((question) => (
-              
               <QuestionItem key={question.id} question={question} />
             ))}
           </div>

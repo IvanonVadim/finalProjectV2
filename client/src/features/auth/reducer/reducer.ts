@@ -18,6 +18,11 @@ const userReducer = (state: State = initialState, action: Action): State => {
         ...state,
         errUser: action.payload.message,
       };
+    case 'user/score':
+      return {
+        ...state,
+        user: action.payload,
+      };
 
     case 'user/werification':
       if ('id' in action.payload) {

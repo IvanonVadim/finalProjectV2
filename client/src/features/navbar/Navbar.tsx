@@ -1,5 +1,7 @@
+
 import React from 'react';
 import { Outlet, NavLink, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
 import './Navbar.css';
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState } from '../../store/store';
@@ -41,6 +43,7 @@ function Navbar(): JSX.Element {
               </div>
             </>
           )}
+
         </nav>
       </div>
       <Outlet />
