@@ -5,12 +5,17 @@ module.exports = {
       'Themes',
       [
         {
-          title: 'первая',
+          title: 'Юмор ИИ',
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          title: 'вторая',
+          title: 'Гарри Поттер',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          title: 'Разное',
           createdAt: new Date(),
           updatedAt: new Date(),
         },
