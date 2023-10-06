@@ -1,11 +1,15 @@
 const router = require("express").Router();
 const { Theme, Question, User } = require("../../db/models");
 
+
 router.get("/car", async (req, res) => {
   try {
     const themes = await Theme.findAll({
       include: { model: Question },
     });
+
+    res.status(200).json({ message: "ok", themes });
+
     console.log(themes);
     res.status(200).json({ message: "ok", themes });
   } catch ({ message }) {
@@ -27,6 +31,7 @@ router.post("/", async (req, res) => {
       user.save();
       res.json({ message: "тупик", user });
     }
+
   } catch ({ message }) {
     res.status(500).json({ message });
   }
