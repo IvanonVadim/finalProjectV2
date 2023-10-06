@@ -7,7 +7,7 @@ module.exports = {
         {
           name: 'vadim',
           password: '12345',
-          score: 100,
+          score: 950,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
