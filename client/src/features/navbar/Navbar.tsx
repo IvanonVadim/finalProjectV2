@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
 import './Navbar.css'
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
 
 function Navbar() {
+  const user = useSelector((store:RootState)=>store.userState.user)
+
   return (
     <>
       <div className="nav">
        <nav className='navbar'> <li>
           <NavLink to="/game">В игру!</NavLink>
+        <h5>{user?.score}</h5>
         </li>
         <li>
           <NavLink to="/">Регистрация</NavLink>
