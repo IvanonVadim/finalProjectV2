@@ -1,3 +1,5 @@
+import { Route, Routes } from 'react-router-dom';
+import Rega from '../features/auth/Rega';
 import './App.css';
 
 import { Route, Routes } from 'react-router-dom';
@@ -16,12 +18,15 @@ import ThemePage from '../features/themes/ThemePage';
 
 
 function App(): JSX.Element {
+
   const dispatch = useDispatch();
 
   return (
     <Routes>
       <Route path="/" element={<Navbar />} />
       <Route path="/themes" element={<ThemesList />} />
+      <Route path="/" element={<Rega />} />
+
 
     </Routes>
   );
