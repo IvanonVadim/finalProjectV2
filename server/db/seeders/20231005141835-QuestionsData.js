@@ -12,6 +12,22 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
+        {
+          themeId: 1,
+          content: 'вопрос2',
+          price: 100,
+          answer: 'вопрос2',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          themeId: 1,
+          content: 'вопрос3',
+          price: 100,
+          answer: 'вопрос3',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
 
         {
           themeId: 1,
