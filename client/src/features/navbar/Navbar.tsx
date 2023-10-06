@@ -19,10 +19,6 @@ function Navbar() {
           <NavLink to="/logout">Выйти</NavLink>
         </li>
         </nav>
-        <img
-         className='navImg' src="https://pic.rutubelist.ru/video/aa/ce/aace198df3f7dc90d24fe5697ef1e934.jpg"
-          alt="imgGame"
-        />
       </div>
       <Outlet />
     </>

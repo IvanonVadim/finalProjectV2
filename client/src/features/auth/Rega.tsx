@@ -22,7 +22,7 @@ function Rega(): JSX.Element {
   };
 
   return (
-    <div>
+    <div className='divRega'>
       <form onSubmit={rega}>
         <input
           name="name"
