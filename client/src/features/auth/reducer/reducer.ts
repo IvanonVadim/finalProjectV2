@@ -19,6 +19,42 @@ const userReducer = (state: State = initialState, action: Action): State => {
         errUser: action.payload.message,
       };
 
+    case 'user/werification':
+      if ('id' in action.payload) {
+        return {
+          ...state,
+          user: action.payload,
+          errUser: '',
+        };
+      }
+      return {
+        ...state,
+        errUser: action.payload.message,
+      };
+    case 'user/logout':
+      if (action.payload.message === 'ok') {
+        return {
+          ...state,
+          user: null,
+        };
+      }
+      return {
+        errUser: action.payload.message,
+      };
+
+    case 'user/autoriz':
+      if ('user' in action.payload) {
+        return {
+          ...state,
+          user: action.payload,
+          errUser: '',
+        };
+      }
+      return {
+        ...state,
+        errUser: action.payload.message,
+      };
+
     default:
       return state;
   }

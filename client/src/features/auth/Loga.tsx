@@ -3,30 +3,30 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import * as api from './api';
 
-function Rega(): JSX.Element {
+function Loga(): JSX.Element {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
-  console.log('');
+  const [osh, setOsh] = useState(true);
   const nav = useNavigate();
 
   const dispatch = useDispatch();
 
-  const rega = (e: React.FormEvent<HTMLFormElement>): void => {
+  const aotoriz = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    api
-      .regaFetch({ name, password })
 
-      .then((data) => {
-        dispatch({ type: 'user/rega', payload: data });
-        data.message === 'ok' && nav('/game');
-      })
-
-      .catch((error) => console.log(error));
+    api.autorizFetch({ name, password }).then((data) => {
+      dispatch({ type: 'user/autoriz', payload: data });
+      if (data.message === 'ok') {
+        nav('/game');
+      } else {
+        setOsh(!osh);
+      }
+    }, []);
   };
 
   return (
     <div className="divRega">
-      <form onSubmit={rega}>
+      <form onSubmit={aotoriz}>
         <input
           name="name"
           placeholder="name"
@@ -42,10 +42,11 @@ function Rega(): JSX.Element {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit">rega</button>
+        <button type="submit">save</button>
+        {!osh && <div style={{ color: 'red' }}>ошибка</div>}
       </form>
     </div>
   );
 }
 
-export default Rega;
+export default Loga;
